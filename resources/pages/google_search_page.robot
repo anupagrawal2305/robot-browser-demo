@@ -7,7 +7,7 @@ ${PAGE_TITLE}    Google
 
 *** Keywords ***
 Go To Google Search Page
-    Open Browser    ${SEARCH_URL}    headless=${False}
+    Open Browser    ${SEARCH_URL}    headless=${True}
 
 Verify Page Title
     Get Title    ==    ${PAGE_TITLE}
