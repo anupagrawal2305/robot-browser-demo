@@ -26,3 +26,13 @@ jobs:
 
       - name: Run tests
         run: robot tests/test.robot
+
+      - name: Upload Test Reports as Artifacts
+        if: always() # This ensures the step runs even if the previous step failed
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-test-reports
+          path: |
+            output/output.xml
+            output/log.html
+            output/report.html
